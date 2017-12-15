@@ -1,0 +1,28 @@
+#include <iostream>
+#include<cstring>
+using namespace std;
+ 
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{int i,n,ct=0;
+	string s;
+	    cin>>s;
+	    n=s.length();
+	    for(i=0;i<n;i++)
+	    {
+	        if(ct==0 && s[i]=='1')
+	        ct++;
+	        if(ct==1 && s[i]=='0')
+	        ct++;
+	        if(ct==2 && s[i]=='1')
+	        ct++;
+	    }
+	    if(ct==1 || ct==2)
+	    cout<<"YES"<<endl;
+	    else
+	    cout<<"NO"<<endl;
+	    }
+	return 0;
+}

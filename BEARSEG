@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int a[100001];
+int main() {ios_base::sync_with_stdio(false);
+	cin.tie(NULL);cout.tie(NULL);
+ int t;
+ cin>>t;
+ while(t--)
+ {
+     int n,p,i,j,sum,max=0,ct=0;
+     cin>>n>>p;
+     for(i=0;i<n;i++)
+     cin>>a[i];
+     for(i=0;i<n;i++)
+     {sum=0;
+         for(j=i;j<n;j++)
+         {
+             sum+=a[j];
+             sum%=p;
+             if(sum>max)
+             {
+                 max=sum;
+                 ct=0;
+             }
+             if(sum==max)
+            ct++;
+         }
+     }cout<<max<<" "<<ct<<"\n";
+ }
+	return 0;
+}
